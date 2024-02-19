@@ -1,0 +1,93 @@
+@import 'base';
+
+
+.main {
+    height: 100vh;
+    width: 100vw;
+
+    padding: 10px;
+    // padding-right:5%;
+    
+    background-color: $bg_color_dark;
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: right center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    
+    img {
+        width: 50%;
+        height: auto;
+        position: absolute;
+        right:5%;
+        top:12%;
+        opacity: 0.6;
+    }
+
+    h1 {
+        
+        padding-left: 5%;
+        padding-bottom: 20px;
+        width: 40%;
+        font-size: 4rem;
+        font-family: $header_font_style;
+        color: $font_color_light;
+
+
+
+    }
+
+    p {
+        margin-left: 5%;
+        padding-left: 20px;
+        width: 35%;
+        font-size: 1.5rem;
+        font-family: $main_font_style;
+        color: $font_color_light;
+
+        border-left: 2px solid $font_color_accent;
+        // text-align: center;
+    }
+    
+
+}
+
+
+.blurb {
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+    background-color: $bg_color_dark;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+
+    h2 {
+        padding-top: 5%;
+
+        width: 60%;
+        font-size: 2.5rem;
+        font-family: $title_font_style;
+        color: $font_color_light;
+        padding: 20px;
+        text-align: center;
+        border-bottom: solid 1px $font_color_accent;
+
+    }
+
+    p {
+        width: 60%;
+        text-align: center;
+        font-size: 1.5rem;
+        font-family: $main_font_style;
+        color: $font_color_light;
+        padding: 20px;
+        border-bottom: solid 1px $font_color_accent;
+    }
+}

@@ -1,0 +1,45 @@
+{% extends 'ecomerce_site/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+
+{% block css %}
+    <link href="{% static 'ecomerce_site/css/index.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="main" >
+        <h1>
+            Forge Unbreakable Bonds on the
+            <span class="colored">
+                Jiu Jitsu
+            </span>
+            Journey.
+        </h1>
+
+        <p>
+            We are a jiu-jitsu clothing brand, empowers women both on and off the mats.
+        </p>
+
+        <img src="{% static 'ecomerce_site/images/mermaid_opacity_blend.png' %}" alt="">
+    </div>
+
+    <div class="blurb">
+        <h2>
+            Our Mission
+        </h2>
+        <p>
+            Every purchase supports women at local gyms, creating a community where empowerment is not just a concept, but a reality. Reach out to us an tell us your story!
+        </p>
+    </div>
+
+{% endblock %}
+
+
+{% block js %}
+{% endblock %}

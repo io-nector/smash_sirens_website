@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    {% block title %}
+    {% endblock %}
+
+    {% block css %}
+    {% endblock %}
+
+</head>
+<body>
+    <header>
+        <h1 class='logo'>
+            SMASH SIRENS
+        </h1>
+        
+        <nav>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="">Shop</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
+ 
+    </header>
+
+{% block content %}
+{% endblock %}
+
+<footer>
+    <img class='deep_water' src="{% static 'ecomerce_site/images/deep_water_logo_dark.jpg' %}" alt="">
+
+    <div class="footer_icons">
+        <img class='facebook_icon' src="{% static 'ecomerce_site/images/Facebook Outlined Icon.svg' %}" alt="">
+
+        <img class='instagram_icon' src="{% static 'ecomerce_site/images/Instagram Black Line.svg' %}" alt="">
+    </div>
+</footer>
+
+{% block js %}
+{% endblock %}
+</body>
+</html>
