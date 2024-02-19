@@ -23,7 +23,7 @@
         <nav>
             <ul>
                 <li><a href="{% url 'index' %}">Home</a></li>
-                <li><a href="">Shop</a></li>
+                <li><a href="{% url 'merch' %}">Gear</a></li>
                 <li><a href="">Contact</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
             </ul>
@@ -34,7 +34,7 @@
 {% endblock %}
 
 <footer>
-    <img class='deep_water' src="{% static 'ecomerce_site/images/deep_water_logo_dark.jpg' %}" alt="">
+    <img class='deep_water' src="{% static 'ecomerce_site/images/deep_water_logo_opacity.png' %}" alt="">
 
     <div class="footer_icons">
         <img class='facebook_icon' src="{% static 'ecomerce_site/images/Facebook Outlined Icon.svg' %}" alt="">

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'smash_sirens',
+    'ecomerce_site',
 ]
 
 MIDDLEWARE = [
@@ -160,3 +161,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Custom user model
 # https://testdriven.io/blog/django-custom-user-model/
 AUTH_USER_MODEL = "users.CustomUser"
+
+
+#used for pillow and uploading images
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

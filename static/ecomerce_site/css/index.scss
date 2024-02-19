@@ -89,5 +89,24 @@
         color: $font_color_light;
         padding: 20px;
         border-bottom: solid 1px $font_color_accent;
+        
+    }
+}
+
+.showcase {
+    min-height:50vh;
+    width: 100%;
+    padding-bottom: 10%;
+
+    background-color: $bg_color_dark;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 90%;
+        height: auto;
+        object-fit: cover;
     }
 }

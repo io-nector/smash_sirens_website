@@ -1,0 +1,46 @@
+{% extends 'ecomerce_site/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Home</title>
+{% endblock %}
+
+
+{% block css %}
+    <link href="{% static 'ecomerce_site/css/merch.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+    <div class="store_header">
+        <img src="{% static 'ecomerce_site/images/IMG_2796.jpg' %}" alt="">
+    </div>
+
+
+    <div class="store_title">
+        <h1>Women's Jiu Jitsu Gear</h1>
+    </div>
+
+
+    <div class="store">
+
+        {% for item in products%}
+            <div class="item">
+                <img src="{{item.image_1.url}}" alt="{{item.name}}">
+        
+                <div class="item-info">
+                    <h2>{{item.name}}</h2>
+                    {% comment %} <p>{{item.description}}</p> {% endcomment %}
+                    <br>
+                    <p>{{item.price}}</p>
+                </div>
+            </div>
+        {% endfor %}
+
+
+    </div>
+{% endblock %}
+
+
+{% block js %}
+{% endblock %}
