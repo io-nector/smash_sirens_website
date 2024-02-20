@@ -4,9 +4,7 @@
 .store_header{
     width: 100%;
     height:52vh;
-    background-color: $bg_color_dark;
     position: relative;
-
     overflow: hidden;
     padding-top:12vh;
 
@@ -43,9 +41,9 @@
         
         color: $font_color_accent;
         font-family: $header_font_style;
-        font-size: 4.8rem;
+        font-size: 3.4rem;
         text-align: center;
-        letter-spacing: 20px;
+        letter-spacing: 5px;
         font-weight: 400;
     }
 
@@ -63,9 +61,6 @@
     padding-top: 10%;
     padding-bottom: 5%;
 
-    background-color: $bg_color_dark;
-
-
     h1 {
         color: $font_color_light;
         font-family: $header_font_style;
@@ -75,29 +70,32 @@
     }
     hr {
         width: 50%;
-        margin: 0 auto;
+        margin: 10px auto;
         border: 1px solid $font_color_accent;
+        
     }
 }
 
 
 .store {
 
-    width: 100%;
-    min-height: 100vh;
+    // max-width: 100%;
+    min-height: 100%;
+
+    margin-left: 30px;
+    margin-right: 30px;
 
     padding-top:12vh;
 
-    background-color: $bg_color_dark;
-
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(375px, 1fr));
-    grid-auto-rows: 80vh;
+    grid-auto-rows: minmax(40vh, auto);
     gap: 30px;
 
     .item {
         grid-column: span 1;
         grid-row:span 1;
+        
 
         overflow-x: hidden;
 
@@ -106,6 +104,12 @@
                 filter: grayscale(0);
                 width: 102%;
                 transition: all 0.3s ease-in-out;
+            }
+            .item-info {
+                h2 {
+                    color: $font_color_accent;
+                    transition: all 0.3s ease-in-out;
+                }
             }
         }
 
@@ -117,7 +121,6 @@
         }
 
         .item-info {
-
             color: $font_color_light;
             font-family: $main_font_style;
             text-align: center;
@@ -127,8 +130,10 @@
 
             h2 {
                 font-size: 2.4rem;
-                color: $font_color_accent;
+                color: $font_color_light;
                 font-weight: normal;
+                transition: all 0.3s ease-in-out;
+
             }
 
             p {

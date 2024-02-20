@@ -16,9 +16,12 @@ html {
 body {
     width: 100vw;
     min-height: 100vh;
+    background-color: $bg_color_dark;
 
     .colored {
       color: $font_color_accent;
+      
+
   }
 }
 

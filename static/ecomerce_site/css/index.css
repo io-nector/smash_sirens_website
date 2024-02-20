@@ -8,20 +8,31 @@ header {
   background-color: #232323;
   display: flex;
   align-items: center;
+  z-index: 200;
 }
-header .logo {
+header h1 {
   min-width: fit-content;
   padding-left: 2%;
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
-  color: rgb(196, 196, 196);
-  letter-spacing: 10px;
+  letter-spacing: 7px;
   text-wrap: nowrap;
+  bottom: 0;
+  left: 10px;
+  position: absolute;
+}
+header h1:nth-child(1) {
+  color: rgb(196, 196, 196);
+}
+header h1:nth-child(2) {
+  color: rgb(230, 29, 123);
+  animation: animate 2s ease-in-out infinite;
 }
 header nav {
   width: 100%;
   height: 100%;
   padding-right: 2%;
+  margin-top: 2vh;
 }
 header nav ul {
   display: flex;
@@ -29,11 +40,23 @@ header nav ul {
   align-items: center;
   gap: 5%;
 }
+header nav ul li {
+  list-style-type: none;
+}
 header nav ul li a {
   font-size: 2rem;
   font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
   color: rgb(196, 196, 196);
   text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 0px;
+}
+header nav ul li a:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.1);
+  border: 2px solid rgb(230, 29, 123);
+  border-radius: 5px;
+  padding: 5px;
 }
 
 footer {
@@ -42,7 +65,6 @@ footer {
   padding: 0%;
   padding-bottom: 5%;
   margin: 0%;
-  background-color: #232323;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -85,6 +107,14 @@ footer .footer_content a {
   text-decoration: none;
 }
 
+@keyframes animate {
+  0%, 100% {
+    clip-path: polygon(0% 45%, 16% 44%, 33% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+  }
+  50% {
+    clip-path: polygon(0% 60%, 15% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -100,6 +130,7 @@ html {
 body {
   width: 100vw;
   min-height: 100vh;
+  background-color: #232323;
 }
 body .colored {
   color: rgb(230, 29, 123);
@@ -109,7 +140,6 @@ body .colored {
   height: 100vh;
   width: 100vw;
   padding: 10px;
-  background-color: #232323;
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: right center;
@@ -147,11 +177,11 @@ body .colored {
 .blurb {
   padding-top: 10vh;
   padding-bottom: 10vh;
-  background-color: #232323;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 10vh;
 }
 .blurb h2 {
   padding-top: 5%;
@@ -164,28 +194,100 @@ body .colored {
   border-bottom: solid 1px rgb(230, 29, 123);
 }
 .blurb p {
+  display: block;
   width: 60%;
+  padding: 50px;
   text-align: center;
   font-size: 1.5rem;
   font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
   color: rgb(196, 196, 196);
-  padding: 20px;
   border-bottom: solid 1px rgb(230, 29, 123);
+  transition: all 0.3s ease;
 }
 
 .showcase {
-  min-height: 50vh;
+  min-height: 80vh;
   width: 100%;
-  padding-bottom: 10%;
-  background-color: #232323;
+  padding: 5%;
+  margin-top: 20vh;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: first baseline;
+  flex-wrap: wrap;
+  gap: 50px;
+  /* CSS */
 }
-.showcase img {
-  width: 90%;
-  height: auto;
-  object-fit: cover;
+.showcase .topic {
+  width: minmax(400px, 100%);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.showcase .topic h2 {
+  margin-top: 30px;
+  font-size: 2rem;
+  font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
+  color: #666;
+  text-align: center;
+}
+.showcase .topic h1 {
+  margin-top: 10px;
+  font-size: 3rem;
+  font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
+  color: rgb(196, 196, 196);
+  text-align: center;
+}
+.showcase .topic p {
+  width: 550px;
+  margin-top: 10px;
+  font-size: 1.8rem;
+  font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
+  color: rgb(196, 196, 196);
+  text-align: center;
+  text-wrap: wrap;
+  font-weight: 200;
+  line-height: 3rem;
+}
+.showcase .button-28 {
+  min-height: 45px;
+  width: 30%;
+  align-self: center;
+  justify-self: end;
+  display: inline-block;
+  appearance: none;
+  line-height: normal;
+  margin-top: 30px;
+  outline: none;
+  padding: 16px 24px;
+  background-color: transparent;
+  border: 2px solid rgb(196, 196, 196);
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: rgb(196, 196, 196);
+  cursor: pointer;
+  font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 300ms cubic-bezier(0.23, 1, 0.32, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  will-change: transform;
+}
+.showcase .button-28:disabled {
+  pointer-events: none;
+}
+.showcase .button-28:hover {
+  color: #fff;
+  background-color: rgb(230, 29, 123);
+  box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+  transform: translateY(-2px);
+}
+.showcase .button-28:active {
+  box-shadow: none;
+  transform: translateY(0);
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,8 +1,7 @@
 
 header {
     position: fixed;
-    width: 100%;
-
+    width: 100%;    
     padding: 0%;
     margin: 0%;
 
@@ -13,44 +12,66 @@ header {
 
     z-index: 200;
 
-
-    .logo {
+    h1 {
         min-width: fit-content;
         padding-left: 2%;
 
-        font-size: 4rem;
+        font-size: 3rem;
         font-family: $logo_font_style;
-        color: $font_color_light;
-        letter-spacing: 10px;
+        letter-spacing: 7px;
 
         text-wrap: nowrap;
+        bottom: 0;
+        left: 10px;
+        position: absolute;
+        // transform: translate(-50%, -50%);
+
+        &:nth-child(1) {
+            color: $font_color_light;
+            // -webkit-text-stroke: 2px #03a9f4;
+          }
+          
+        &:nth-child(2) {
+            color: $font_color_accent;
+            animation: animate 2s ease-in-out infinite;
+          }
     }
      
     
     nav {
         width: 100%;
         height: 100%;
-
         padding-right: 2%;
+        margin-top: 2vh;
 
-
-        
         ul {
             display: flex;
             justify-content: end;
             align-items: center;
             gap: 5%;
 
-            li a {
-                font-size: 2rem;
-                font-family: $header_font_style;
-                color: $font_color_light;
-                text-decoration: none;
+            li {
+                list-style-type: none;
+                a {
+                    font-size: 2rem;
+                    font-family: $header_font_style;
+                    color: $font_color_light;
+                    text-decoration: none;
+                    transition: all 0.3s ease;
+
+                    border-bottom: 0px;
+
+                    &:hover {
+                        // color: $font_color_dark;
+                        transition: all 0.3s ease;
+                        transform: scale(1.1);
+                        border: 2px solid $font_color_accent;
+                        border-radius: 5px;
+                        padding:5px
+                    }
+                }
             }
         }
-        
-        
-        
     }
 }
 
@@ -62,8 +83,6 @@ footer {
     padding: 0%;
     padding-bottom: 5%;
     margin: 0%;
-
-    background-color: $bg_color_dark;
 
     display: flex;
     flex-direction: column;
@@ -114,3 +133,39 @@ footer {
         }
     }
 }
+
+
+@keyframes animate {
+    0%, 100% {
+      clip-path: polygon(
+        0% 45%,
+        16% 44%,
+        33% 50%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  
+    50% {
+      clip-path: polygon(
+        0% 60%,
+        15% 65%,
+        34% 66%,
+        51% 62%,
+        67% 50%,
+        84% 45%,
+        100% 46%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  }
+
+  //animation provided by https://codepen.io/alvarotrigo/pen/PoKMyzO
+
+  //https://codepen.io/alvarotrigo
+
