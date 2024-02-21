@@ -1,1 +1,1 @@
-web: gunicorn smash_sirens.wsgi
+web: gunicorn SMASH_SIRENS_WEBSITE.wsgi
