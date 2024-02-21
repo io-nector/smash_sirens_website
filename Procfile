@@ -1,0 +1,1 @@
+web: gunicorn SMASH_SIRENS_WEBSITE.wsgi

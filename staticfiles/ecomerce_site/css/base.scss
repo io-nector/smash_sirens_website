@@ -1,0 +1,26 @@
+@import 'variables';
+@import 'header_footer.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+    width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: $bg_color_dark;
+
+    .colored {
+      color: $font_color_accent;
+  }
+}
+
