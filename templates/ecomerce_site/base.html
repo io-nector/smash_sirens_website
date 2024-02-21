@@ -23,14 +23,32 @@
             SMASH SIRENS
         </h1>
         
-        <nav>
+        <nav class="desktop_nav">
             <ul>
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'merch' %}">Gear</a></li>
-                <li><a href="">Contact</a></li>
+                <li><a href="">Stories</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
             </ul>
- 
+            
+        </nav>
+
+
+        <nav class="mobile_nav" role="navigation">
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+    
+                <ul id="menu">
+                    <li><a href="{% url 'index' %}">Home</a></li>
+                    <li><a href="{% url 'merch' %}">Gear</a></li>
+                    <li><a href="">Stories</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
 
 {% block content %}
@@ -50,3 +68,10 @@
 {% endblock %}
 </body>
 </html>
+
+
+
+
+          
+ 
+
