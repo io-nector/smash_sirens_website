@@ -96,7 +96,8 @@ AWS_DEFAULT_ACL = None
 AWS_S3_REGION_NAME = 'us-west-1'
 AWS_S3_SIGNATURE_VERSION = 's3v4'
 
-
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
