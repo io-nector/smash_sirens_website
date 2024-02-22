@@ -32,7 +32,11 @@
 
         {% for item in products%}
             <div class="item">
-                <img src="{{item.image_1.url}}" alt="{{item.name}}">
+                {% if object.image_1: %}
+                    <img src="{{item.image_1.url}}" alt="{{item.name}}">                
+                {% else: %}
+                    <img class='deep_water' src="{% static 'ecomerce_site/images/deep_water_logo_opacity.png' %}" alt="">  
+                {% endif %}
         
                 <div class="item-info">
                     <h2>{{item.name}}</h2>
