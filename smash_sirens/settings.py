@@ -85,34 +85,34 @@ WSGI_APPLICATION = 'smash_sirens.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-postgresql_host = os.getenv('postgresql_host')
-postgresql_database = os.getenv('postgresql_database')
-postgresql_user = os.getenv('postgresql_user')
-postgresql_port = os.getenv('postgresql_port')
-postgresql_password = os.getenv('postgresql_password')
-postgresql_uri = os.getenv('postgresql_uri')
+postgresql_host = os.getenv('Host')
+postgresql_database = os.getenv('Database')
+postgresql_user = os.getenv('User')
+postgresql_port = os.getenv('Port')
+postgresql_password = os.getenv('Password')
+postgresql_uri = os.getenv('DATABASE_URL')
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': postgresql_database,
-#         'USER': postgresql_user,
-#         'PASSWORD': postgresql_password,
-#         'HOST': postgresql_host,
-#         'PORT':  postgresql_port,
-#     }
-# }
 DATABASES = {
-
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "local_database",
-        "USER": "deanwatson",
-        "PASSWORD": "",
-        "HOST": "localhost",
-        "PORT": "",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': postgresql_database,
+        'USER': postgresql_user,
+        'PASSWORD': postgresql_password,
+        'HOST': postgresql_host,
+        'PORT':  postgresql_port,
     }
 }
+# DATABASES = {
+
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql_psycopg2",
+#         "NAME": "User",
+#         "USER": "deanwatson",
+#         "PASSWORD": "",
+#         "HOST": "localhost",
+#         "PORT": "",
+#     }
+# }
 
 
 # Password validation
