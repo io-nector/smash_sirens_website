@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
-
+import dj_database_url
 
 
 #used for loading environment variables
@@ -37,7 +37,7 @@ else:
     DEBUG = False
 # DEBUG = 'DJANGO_DEBUG'
 
-ALLOWED_HOSTS = ['smash-sirens-eafd8dd74e74.herokuapp.com','127.0.0.1']
+ALLOWED_HOSTS = ['smash-sirens-eafd8dd74e74.herokuapp.com','127.0.0.1','.herokuapp.com']
 
 
 # Application definition
@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'users',
     'smash_sirens',
     'ecomerce_site',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +85,16 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'smash_sirens.wsgi.application'
+
+# AWS S3 SETTINGS - set here to be ahead of the static and media settings
+#ADD AWS S3 SETTINGS
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_URL = os.environ.get('AWS_URL')
+AWS_DEFAULT_ACL = None
+# AWS_S3_REGION_NAME = 'us-east-2'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 
 # Database
@@ -157,7 +168,7 @@ USE_TZ = True
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 
 
-STATIC_URL = 'static/'
+STATIC_URL = AWS_URL + '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
@@ -175,7 +186,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # STATIC_ROOT = BASE_DIR / 'staticfiles'
 # STATIC_URL = '/static/'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' #added for S3 BUCKETS
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
@@ -189,4 +202,11 @@ AUTH_USER_MODEL = "users.CustomUser"
 
 #used for pillow and uploading images
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+# MEDIA_URL = '/media/'
+MEDIA_URL = AWS_URL + '/media/' #added for S3 BUCKETS
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' #added for S3 BUCKETS
+
+import django_heroku
+django_heroku.settigns(locals(), staticfiles=False) #added for heroku deployment
