@@ -1,3 +1,2 @@
-web: gunicorn smash_sirens.wsgi
+web: gunicorn smash_sirens.wsgi --log-fil -
 
-eb: pip install --upgrade pip && python manage.py

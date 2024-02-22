@@ -33,7 +33,7 @@ SECRET_KEY = 'DJANGO_SECRET_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DJANGO_DEBUG'
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['smash-sirens-eafd8dd74e74.herokuapp.com','127.0.0.1']
 
 
 # Application definition
