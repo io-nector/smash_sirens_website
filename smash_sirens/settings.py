@@ -205,8 +205,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # MEDIA_URL = '/media/'
 MEDIA_URL = AWS_URL + '/media/' #added for S3 BUCKETS
 
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'#added for S3 BUCKETS
 
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' #added for S3 BUCKETS
-
-# import django_heroku
-# django_heroku.settings(locals(), staticfiles=False) #added for heroku deployment
+import django_heroku
+django_heroku.settings(locals(), staticfiles=False) #added for heroku deployment
