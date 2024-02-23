@@ -375,8 +375,6 @@ body .colored {
 
 .store {
   min-height: 100%;
-  margin-left: 30px;
-  margin-right: 30px;
   padding-top: 12vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
