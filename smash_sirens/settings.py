@@ -108,27 +108,34 @@ postgresql_port = os.getenv('Port')
 postgresql_password = os.getenv('Password')
 postgresql_uri = os.getenv('DATABASE_URL')
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': postgresql_database,
-        'USER': postgresql_user,
-        'PASSWORD': postgresql_password,
-        'HOST': postgresql_host,
-        'PORT':  postgresql_port,
+
+if DEBUG:
+    DATABASES = {
+
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "User",
+        "USER": "deanwatson",
+        "PASSWORD": "",
+        "HOST": "localhost",
+        "PORT": "",
     }
 }
-# DATABASES = {
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': postgresql_database,
+            'USER': postgresql_user,
+            'PASSWORD': postgresql_password,
+            'HOST': postgresql_host,
+            'PORT':  postgresql_port,
+        }
+    }
 
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql_psycopg2",
-#         "NAME": "User",
-#         "USER": "deanwatson",
-#         "PASSWORD": "",
-#         "HOST": "localhost",
-#         "PORT": "",
-#     }
-# }
+
+
+
 
 
 # Password validation
@@ -165,30 +172,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-#added for heroku deployment
-# The absolute path to the directory where collectstatic will collect static files for deployment.
+if DEBUG:
+    STATIC_URL = '/static/'
+    STATICFILES_DIRS = [BASE_DIR / 'static']
+    STATIC_ROOT = BASE_DIR / 'staticfiles'
+    MEDIA_URL = '/media/'
+    MEDIA_ROOT = BASE_DIR / 'media'
+else:
+    STATIC_URL = AWS_URL + '/static/'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' 
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_URL = AWS_URL + '/media/' #added for S3 BUCKETS
+    DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'#added for S3 BUCKETS
 
-
-STATIC_URL = AWS_URL + '/static/'
-
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static")
-]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-
-
-
-
-# STATICFILES_DIRS = [
-#     BASE_DIR / 'static',
-# ]
-# STATIC_ROOT = BASE_DIR / 'staticfiles'
-# STATIC_URL = '/static/'
-
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage' #added for S3 BUCKETS
 
 
 # Default primary key field type
@@ -201,12 +199,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = "users.CustomUser"
 
 
-#used for pillow and uploading images
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# MEDIA_URL = '/media/'
-MEDIA_URL = AWS_URL + '/media/' #added for S3 BUCKETS
-
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'#added for S3 BUCKETS
 
 import django_heroku
 django_heroku.settings(locals(), staticfiles=False) #added for heroku deployment

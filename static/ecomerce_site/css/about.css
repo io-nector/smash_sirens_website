@@ -178,7 +178,7 @@
     transform: rotate(-45deg) translate(0, -1px);
   }
   header .mobile_nav #menuToggle input:checked ~ ul {
-    transform: translate(-30%, 0);
+    transform: translate(-30vw, 0);
   }
   header .mobile_nav #menuToggle span {
     display: flex;
@@ -200,8 +200,8 @@
   }
   header .mobile_nav #menu {
     position: absolute;
-    width: 180px;
-    height: 400px;
+    width: 50vw;
+    height: 80vh;
     box-shadow: 0 0 10px #85888C;
     margin: -50px 0 0 -50px;
     padding: 50px;
@@ -225,7 +225,7 @@
     color: rgb(230, 29, 123);
     opacity: 1;
     font-family: "Montserrat", Helvetica, Arial, Lucida, sans-serif;
-    font-size: 1.5em;
+    font-size: 2.2rem;
     font-weight: 400;
     transition: 200ms;
   }

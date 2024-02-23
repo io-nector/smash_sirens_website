@@ -226,7 +226,7 @@
                     }
                     
                     &:checked ~ ul {
-                        transform: translate(-30%, 0);;
+                        transform: translate(-30vw, 0);;
                     }
                 }
         
@@ -256,8 +256,8 @@
           
             #menu {
                 position: absolute;
-                width: 180px;
-                height: 400px;
+                width: 50vw;
+                height: 80vh;
                 box-shadow: 0 0 10px #85888C;
                 margin: -50px 0 0 -50px;
                 padding: 50px;
@@ -282,7 +282,7 @@
                             color: $font_color_accent;
                             opacity:1;
                             font-family: $header_font_style;
-                            font-size: 1.5em;
+                            font-size: 2.2rem;
                             font-weight: 400;
                             transition: 200ms;
                         }
