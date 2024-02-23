@@ -32,12 +32,13 @@
 
         {% for item in products%}
             <div class="item">
-                {% if object.image_1 %}
+                {% comment %} {% if object.image_1 %}
                     <img src="{{item.image_1.url}}" alt="{{item.name}}">                
                 {% else %}
                     <img class='deep_water' src="{% static 'ecomerce_site/images/deep_water_logo_opacity.png' %}" alt="">  
-                {% endif %}
-        
+                {% endif %} {% endcomment %}
+                <img src="{{item.image_1.url}}" alt="{{item.name}}">                
+
                 <div class="item-info">
                     <h2>{{item.name}}</h2>
                     {% comment %} <p>{{item.description}}</p> {% endcomment %}
