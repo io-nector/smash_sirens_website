@@ -186,6 +186,10 @@
         .mobile_nav {
             height: 65px;
             position: relative;
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            padding:20px;
             
             #menuToggle {
                 display: flex;
