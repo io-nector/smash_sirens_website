@@ -36,6 +36,8 @@ if os.getenv('DJANGO_DEBUG') == 'True':
 else:
     DEBUG = False
 # DEBUG = 'DJANGO_DEBUG'
+    
+print(DEBUG)
 
 ALLOWED_HOSTS = ['smash-sirens-eafd8dd74e74.herokuapp.com','127.0.0.1','.herokuapp.com']
 
@@ -106,22 +108,24 @@ postgresql_database = os.getenv('Database')
 postgresql_user = os.getenv('User')
 postgresql_port = os.getenv('Port')
 postgresql_password = os.getenv('Password')
-postgresql_uri = os.getenv('DATABASE_URL')
+# postgresql_uri = os.getenv('DATABASE_URL')
 
 
 if DEBUG:
+    print('local database activated')
     DATABASES = {
-
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "User",
-        "USER": "deanwatson",
-        "PASSWORD": "",
-        "HOST": "localhost",
-        "PORT": "",
+        "default": {
+            "ENGINE": "django.db.backends.postgresql_psycopg2",
+            "NAME": "User",
+            "USER": "deanwatson",
+            "PASSWORD": "",
+            "HOST": "localhost",
+            "PORT": "",
+        }
     }
-}
 else:
+    print('remote database activated')
+
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -173,6 +177,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 if DEBUG:
+    print('local static and media settings activated')
     STATIC_URL = '/static/'
     STATICFILES_DIRS = [BASE_DIR / 'static']
     STATIC_ROOT = BASE_DIR / 'staticfiles'
