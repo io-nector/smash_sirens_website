@@ -1,0 +1,56 @@
+{% extends 'ecomerce_site/base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>Blog</title>
+{% endblock %}
+
+
+{% block css %}
+    <link href="{% static 'ecomerce_site/css/blog.css' %}" rel="stylesheet">
+{% endblock %}
+
+
+{% block content %}
+<div class="blog">
+
+    {% for post in blog %}
+        <div class="blog_post">
+            <img src="{{item.image_2.url}}" alt="{{item.name}}">  
+            <h1>{{ post.title }}</h1>
+            <p>{{ post.content }}</p>
+        </div>
+    {% endfor %}
+
+</div>
+    {% comment %} <h1>Blog</h1>
+
+    <div class="blog_post">
+        
+        <img src="{% static 'ecomerce_site/images/mermaid_opacity_blend.png' %}" alt="">
+
+        <h1>Blog</h1>
+
+        <p>
+            lipsem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil soluta suscipit repellendus adipisci beatae, delectus laboriosam ad corporis, blanditiis nulla voluptatem pariatur, maiores eius nostrum quidem quia nam quaerat nemo!
+        </p>
+    </div>
+
+    <div class="blog_post">
+        
+        <img src="{% static 'ecomerce_site/images/mermaid_opacity_blend.png' %}" alt="">
+
+        <h1>Blog</h1>
+
+        <p>
+            lipsem Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil soluta suscipit repellendus adipisci beatae, delectus laboriosam ad corporis, blanditiis nulla voluptatem pariatur, maiores eius nostrum quidem quia nam quaerat nemo!
+        </p>
+    </div>
+</div> {% endcomment %}
+
+
+{% endblock %}
+
+
+{% block js %}
+{% endblock %}

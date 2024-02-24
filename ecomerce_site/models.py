@@ -9,3 +9,11 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+    
+class Blog(models.Model):
+    title = models.CharField(max_length=255)
+    content = models.TextField()
+    image_2=models.ImageField(upload_to='blog', blank=True)
+
+    def __str__(self):
+        return self.title

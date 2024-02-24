@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Product
+from .models import Product, Blog
 
 # Create your views here.
 def index(request):
@@ -13,6 +13,13 @@ def merch(request):
     return render(request, 'ecomerce_site/merch.html', 
         {
             'products': products
+    })
+
+def blog(request):
+    blog = Blog.objects.all()
+    return render(request, 'ecomerce_site/blog.html',
+                  {
+        'blog': blog
     })
 
 
