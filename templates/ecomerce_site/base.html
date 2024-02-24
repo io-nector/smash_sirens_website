@@ -34,7 +34,7 @@
         </nav>
 
 
-        <nav class="mobile_nav" role="navigation">
+        {% comment %} <nav class="mobile_nav" role="navigation">
             <div id="menuToggle">
                 <input type="checkbox" />
                 <span></span>
@@ -48,6 +48,18 @@
                     <li><a href="{% url 'about' %}">About</a></li>
                 </ul>
             </div>
+        </nav> {% endcomment %}
+
+        <nav class="mobile_nav">
+            <input type="checkbox" id="hamburger1" />
+            <label for="hamburger1"></label>
+          
+            <ul class="nav-links">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'merch' %}">Gear</a></li>
+                <li><a href="">Stories</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -68,6 +80,7 @@
 {% endblock %}
 </body>
 </html>
+
 
 
 

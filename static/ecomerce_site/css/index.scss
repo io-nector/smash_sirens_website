@@ -87,7 +87,7 @@
         }
     
         p {
-            margin-right: 10%;
+            margin: 0 10% 0 5%;
             padding-left: 10px;
             width: auto;
             font-size: 1.5rem;
@@ -95,7 +95,6 @@
             color: $font_color_light;
     
             border-left: 2px solid $font_color_accent;
-            // text-align: center;
         }
     } 
 }
@@ -306,7 +305,7 @@
             h1 {
 
                 margin-top:10px;
-
+                
                 font-size: 3rem;
                 font-family: $header_font_style;
                 color: $font_color_light;
@@ -316,7 +315,6 @@
             p {
                 // width: 550px;
 
-                margin-top: 10px;
                 padding: 0 20px 0 20px;
 
                 font-size: 1.8rem;
