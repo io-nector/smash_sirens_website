@@ -308,8 +308,7 @@ body .colored {
 }
 
 .store_header {
-  width: 100%;
-  height: 52vh;
+  width: 100vw;
   position: relative;
   overflow: hidden;
   padding-top: 12vh;
