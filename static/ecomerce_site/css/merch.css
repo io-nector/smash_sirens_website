@@ -370,7 +370,7 @@ body .colored {
   filter: grayscale(100%);
   z-index: 1;
 }
-@media screen and (max-width: 900px) {
+@media screen and (min-width: 900px) {
   .store_header .store_header_text {
     width: 100%;
     position: absolute;
