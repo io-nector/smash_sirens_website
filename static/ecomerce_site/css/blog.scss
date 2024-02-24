@@ -11,7 +11,6 @@
         justify-content: center;
         align-items: center;
 
-        // gap: 5%;
         
         h1 {
             font-size: 3rem;
@@ -21,14 +20,16 @@
         }
 
         .blog_post {
-            width: 100%;
+            width: 90%;
             height: auto;
 
-            margin: 20px 0 0 0;
+            margin: 40px auto 0px auto;
 
-            border-top: 1px solid $font_color_accent;
-            border-bottom: 1px solid $font_color_accent;
-            
+            border: 1px solid $font_color_medium;
+     
+
+            box-shadow: 5px 10px 0px 2px $bg_color_medium;
+                        
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -40,13 +41,15 @@
                 padding: 10px;
                 margin: 10px;
 
-                background-color: $bg_color_medium;
+                // background-color: $bg_color_medium;
+                background: linear-gradient(to right, transparent,$bg_color_medium, transparent);
+
 
                 border-radius: 10px;
                 
                 font-size: 2rem;
                 font-family: $header_font_style;
-                color: $font_color_accent;
+                color: $font_color_light;
                 text-align: center;
             }
 
@@ -98,7 +101,6 @@
             margin: 20px ;
 
             border: 1px solid $font_color_accent;
-            // border-bottom: 1px solid $font_color_accent;
             border-radius: 10px;
             
             display: flex;
@@ -131,8 +133,7 @@
             }
             img {
                 width: 100%;
-                aspect-ratio: 16/9;
-                // height: calc(100% / 1.8);
+                aspect-ratio: 16/9;                
                 margin: 10px;
                 object-fit: cover;
                 overflow: hidden;

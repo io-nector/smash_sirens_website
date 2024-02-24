@@ -34,22 +34,6 @@
         </nav>
 
 
-        {% comment %} <nav class="mobile_nav" role="navigation">
-            <div id="menuToggle">
-                <input type="checkbox" />
-                <span></span>
-                <span></span>
-                <span></span>
-    
-                <ul id="menu">
-                    <li><a href="{% url 'index' %}">Home</a></li>
-                    <li><a href="{% url 'merch' %}">Gear</a></li>
-                    <li><a href="">Stories</a></li>
-                    <li><a href="{% url 'about' %}">About</a></li>
-                </ul>
-            </div>
-        </nav> {% endcomment %}
-
         <nav class="mobile_nav">
             <input type="checkbox" id="hamburger1" />
             <label for="hamburger1"></label>
@@ -57,7 +41,7 @@
             <ul class="nav-links">
                 <li><a href="{% url 'index' %}">Home</a></li>
                 <li><a href="{% url 'merch' %}">Gear</a></li>
-                <li><a href="{% url 'blog' %}">Stories</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
             </ul>
         </nav>
@@ -68,11 +52,15 @@
 
 <footer>
     <img class='deep_water' src="{% static 'ecomerce_site/images/deep_water_logo_opacity.png' %}" alt="">
-
+    
     <div class="footer_icons">
-        <img class='facebook_icon' src="{% static 'ecomerce_site/images/Facebook Outlined Icon.svg' %}" alt="">
+        <a href="https://www.facebook.com/profile.php?id=100095240016065">
+            <img class='facebook_icon' src="{% static 'ecomerce_site/images/Facebook Outlined Icon.svg' %}" alt="">
+        </a>
 
-        <img class='instagram_icon' src="{% static 'ecomerce_site/images/Instagram Black Line.svg' %}" alt="">
+        <a href="https://www.instagram.com/deep_water_jiu_jitsu/">
+            <img class='instagram_icon' src="{% static 'ecomerce_site/images/Instagram Black Line.svg' %}" alt="">
+        </a>
     </div>
 </footer>
 
