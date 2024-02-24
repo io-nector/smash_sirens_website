@@ -1,1 +1,0 @@
-{"version":3,"sourceRoot":"","sources":["variables.scss","header_footer.scss","styles.scss"],"names":[],"mappings":"AAAQ;ACAR;EACI;EAEA;EACA;EAEA,kBDEY;ECAZ;EACA;;AAGA;EACI;EACA;EAEA;EACA,aDFU;ECGV,ODbW;ECcX;EAEA;;AAIJ;EACI;EACA;EAEA;EAEA;EACA;EACA;EACA;;AAEA;EACI;EACA,aDtBQ;ECuBR,ODlCO;ECmCP;;;ACrCZ;EACE;EACA;EACA;;;AAGF;EACE;EACE;EACA;;;AAGJ;EACI;EACA","file":"styles.css"}
