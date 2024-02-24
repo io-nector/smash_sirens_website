@@ -103,12 +103,7 @@ AWS_DEFAULT_ACL = None
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-postgresql_host = os.getenv('Host')
-postgresql_database = os.getenv('Database')
-postgresql_user = os.getenv('User')
-postgresql_port = os.getenv('Port')
-postgresql_password = os.getenv('Password')
-# postgresql_uri = os.getenv('DATABASE_URL')
+
 
 
 if DEBUG:
@@ -125,7 +120,13 @@ if DEBUG:
     }
 else:
     print('remote database activated')
-
+    postgresql_host = os.getenv('Host')
+    postgresql_database = os.getenv('Database')
+    postgresql_user = os.getenv('User')
+    postgresql_port = os.getenv('Port')
+    postgresql_password = os.getenv('Password')
+    postgresql_uri = os.getenv('DATABASE_URL')
+    
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
